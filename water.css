@@ -1,0 +1,191 @@
+
+:root{
+    --border-color:#144fc6;
+    --fill-color:#6ab3f8;
+}
+*{
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: ; */
+    background-color: #3494e3;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    
+}
+
+
+h1{
+    margin: 10px 0 0;
+}
+h3{
+    font-weight: 400;
+    margin: 10px 0;
+}
+.cup{
+    background-color: #fff;
+    border: 4px solid var(--border-color) ;
+    color: var(--border-color);
+    border-radius:0 0 40px 40px;
+    height: 330px;
+    width: 150px;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cup.cup-small{
+    height: 95px;
+    width: 50px;
+    border-radius: 0 0 15px 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    font: size 14px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 5px;
+    transition: 0.3s ease;
+}
+.cup.cup-small.full{
+    background-color: var(--fill-color);
+    color: #fff;
+}
+.cups{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 280px;
+
+}
+
+.remained{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    flex: 1;
+    transition: 0.3s ease;
+}
+.remained span{
+    font-size: 20px;
+    font-weight: bold;
+    
+    
+}
+.remained small{
+    font-size: 12px;
+}
+.percentage{
+    background-color: var(--fill-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 30px;
+    height: 0;
+    transition: 0.3s ease;
+}
+.text{
+    text-align: center;
+    margin: 0 0 5px;
+    font-size: 1.1rem;
+}
+
+
+   /* wave animations   SMALL CUPS*/
+
+.cup.cup-small{
+    /* width:500px; */
+    /* height: 500px; */
+    background-color: #35b3e7;
+    /* border-radius: 50%; */
+    position: relative;
+    box-shadow: inset 0 0 20px 0 rgba(0,0,0,.8), 0 0 20px 0 rgba(0,0,0,.3);
+    overflow: hidden;
+}
+.cup.cup-small:before, .cup.cup-small:after{
+    content:'';
+    position: absolute;
+    width:200%;
+    height: 200%;
+    top: -50%;
+    left: 50%;
+    background: #fff;
+}
+.cup.cup-small:before{
+    border-radius: 45%;
+    background:#fff;
+    animation:wave 5s linear infinite;
+}
+.cup.cup-small:after{
+    border-radius: 35%;
+    background:rgba(255,255,255,.3);
+    animation:wave 5s linear infinite;
+}
+@keyframes wave{
+    0%{
+        transform: translate(-50%, -50%) rotate(0);
+        top: -30%;
+    }
+    50%{
+    	top: -50%;
+    }
+    100%{
+        transform: translate(-50%, -50%)  rotate(360deg);
+        top: -30%;
+    }
+}
+
+
+
+/* animation    BIG CUPS AND PERCENTAGE */
+
+.percentage{
+    /* width:500px; */
+    /* height: 500px; */
+    background-color: #35b3e7;
+    /* border-radius: 50%; */
+    position: relative;
+    box-shadow: inset 0 0 20px 0 rgba(0,0,0,.8), 0 0 20px 0 rgba(0,0,0,.3);
+    overflow: hidden;
+}
+.percentage:before, .percentage:after{
+    content:'';
+    position: absolute;
+    width:200%;
+    height: 200%;
+    top: -50%;
+    left: 50%;
+    /* background: #fff; */
+}
+.percentage:before{
+    border-radius: 45%;
+    /* background:#fff; */
+    animation:wave 5s linear infinite;
+}
+.percentage:after{
+    border-radius: 35%;
+    background:rgba(255,255,255,.3);
+    animation:wave 5s linear infinite;
+}
+@keyframes wave{
+    0%{
+        transform: translate(-50%, -50%) rotate(0);
+        top: -30%;
+    }
+    50%{
+    	top: -50%;
+    }
+    100%{
+        transform: translate(-50%, -50%)  rotate(360deg);
+        top: -30%;
+    }
+}
